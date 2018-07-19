@@ -76,7 +76,7 @@ export default {
       getList({ name: this.searchText })
         .then(data => {
           console.log(data.data)
-          this.tableData = data.data.result
+          this.tableData = data.result
         })
     },
     addNew () {
