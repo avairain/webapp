@@ -47,7 +47,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import { getList, add } from '../common/js/interface.js'
 
 export default {
@@ -66,7 +65,7 @@ export default {
   },
   methods: {
     getInfo () {
-     getList()
+      getList()
         .then(data => {
           console.log(data.data)
           this.tableData = data.result
