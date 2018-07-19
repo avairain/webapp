@@ -9,7 +9,6 @@ const DEVELOP_PATH = 'http://127.0.0.1:6060'
 // const DEVELOP_PATH = 'http://172.16.0.120:8080'
 
 // TODO: NEEDS TO BE REPLACED WITH THE REAL PATH
-console.log(process.env.NODE_ENV)
 export const _DOMAIN = (process.env.NODE_ENV === 'production') ? PRODUCT_PATH : (config.dev.proxyTable ? '/cros' : DEVELOP_PATH)
 
 export const _APPS = {

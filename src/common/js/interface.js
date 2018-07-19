@@ -7,18 +7,31 @@ import axios from 'axios'
 
 axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8'
 axios.defaults.headers.get['Content-Type'] = 'application/json;charset=UTF-8'
-if (window.sessionStorage.getItem('rtm_user_token')) {
-  axios.defaults.headers.common['token'] = window.sessionStorage.getItem('rtm_user_token')
-}
 let path = `${_DOMAIN}`
 console.log(path)
 let api_path_add = `${path}/add`
 let api_path_getList = `${path}/getList`
+let api_path_update = `${path}/update`
+let api_path_delete = `${path}/delete`
 // let sp_mds = `${_DOMAIN}/${_APPS['sp_mds'].ver}/${_APPS['sp_mds'].model}`
 
 export function add (params) {
   return _postData(
     api_path_add,
+    params
+  )
+}
+
+export function update (params) {
+  return _postData(
+    api_path_update,
+    params
+  )
+}
+
+export function deleteInfo (params) {
+  return _postData(
+    api_path_delete,
     params
   )
 }

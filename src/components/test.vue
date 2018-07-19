@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div><el-button @click="dialogVisible = true">add</el-button></div>
+    <div><el-input v-model="searchText"></el-input><el-button @click="getInfo">search</el-button></div>
+    <div><el-button @click="add">add</el-button></div>
     <el-table
     :data="tableData"
     stripe
@@ -47,7 +48,8 @@
 </template>
 
 <script>
-import { getList, add } from '../common/js/interface.js'
+import axios from 'axios'
+import { getList, add, update, deleteInfo } from '../common/js/interface.js'
 
 export default {
   name: 'test',
@@ -57,39 +59,65 @@ export default {
     return {
       tableData: [],
       dialogVisible: false,
-      formData: {}
+      formData: {},
+      searchText: ''
     }
   },
   mounted () {
     this.getInfo()
   },
   methods: {
+    add () {
+      this.formData = {}
+      this.formData.addnew = true
+      this.dialogVisible = true
+    },
     getInfo () {
-      getList()
+      getList({ name: this.searchText })
         .then(data => {
           console.log(data.data)
-          this.tableData = data.result
+          this.tableData = data.data.result
         })
     },
     addNew () {
-      add(this.formData)
-        .then(data => {
-          this.dialogVisible = false
-          this.getInfo()
-        })
+      if (this.formData.addnew) {
+        add(this.formData)
+          .then(data => {
+            this.dialogVisible = false
+            this.getInfo()
+            this.formData = {}
+          })
+      } else {
+        update(this.formData)
+          .then(data => {
+            this.dialogVisible = false
+            this.getInfo()
+            this.formData = {}
+          })
+      }
     },
     handleEdit (i, obj) {
       console.log(i, obj)
-      this.$confirm('待开发', '提示')
+      obj.addnew = false
+      this.formData = JSON.parse(JSON.stringify(obj))
+      this.dialogVisible = true
     },
     handleDelete (i, obj) {
       console.log(i, obj)
-      this.$confirm('待开发', '提示')
+      // this.$confirm('待开发', '提示')
+      deleteInfo(obj)
+      .then(data => {
+        this.dialogVisible = false
+        this.getInfo()
+        this.formData = {}
+      })
     }
   }
 }
 </script>
 
-<style lang="less" scoped>
-
+<style lang="less">
+.el-input {
+  width: auto;
+}
 </style>
