@@ -9,6 +9,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 let Hello = () => import('../components/HelloWorld.vue')
+let Test = () => import('../components/test.vue')
 
 export default new Router({
   routes: [
@@ -19,6 +20,10 @@ export default new Router({
     {
       path: '/hello',
       component: Hello
+    },
+    {
+      path: '/test',
+      component: Test
     }
   ]
 })

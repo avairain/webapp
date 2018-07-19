@@ -2,10 +2,10 @@ import config from './'
 
 export const THEME = 'rtm'
 
-const PRODUCT_PATH = 'http://chtcmotorzuul.dev.virtueit.net'
+const PRODUCT_PATH = 'http://140.143.239.174:6060'
     // 'http://chtcmotorzuul.dev.virtueit.net'
     // 'http://chtcmotor.dev.virtueit.net'
-const DEVELOP_PATH = 'http://chtcmotorzuul.dev.virtueit.net'
+const DEVELOP_PATH = 'http://140.143.239.174:6060t'
 // const DEVELOP_PATH = 'http://172.16.0.120:8080'
 
 // TODO: NEEDS TO BE REPLACED WITH THE REAL PATH

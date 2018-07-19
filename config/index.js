@@ -11,7 +11,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
         '/cros/**': {
-            target: 'http://chtcmotorzuul.dev.virtueit.net',
+            target: 'http://140.143.239.174:6060',
             // target: 'http://172.16.1.97:9002',
             changeOrigin: true,
             pathRewrite: {
