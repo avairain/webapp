@@ -11,6 +11,7 @@ export default {
 </script>
 
 <style lang="less">
+@import url("./common/css/reset.css");
 body {
   height: 100vh;
   width: 100vw;
