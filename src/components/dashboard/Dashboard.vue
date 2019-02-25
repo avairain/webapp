@@ -244,14 +244,14 @@ export default {
     },
     changeHeight () {
       update508Member({
-          id: 4,
-          speacil: false,
-          uName: 'zhouxiaolong',
-          theme: 'green',
-          name: '周小龙',
-          description: '这是508最丑的肥逼，没有之一',
-          tips: ['肥', '丑']
-        })
+        id: 4,
+        speacil: false,
+        uName: 'zhouxiaolong',
+        theme: 'green',
+        name: '周小龙',
+        description: '这是508最丑的肥逼，没有之一',
+        tips: ['肥', '丑']
+      })
         .then(data => {
           console.log(data)
           if (data.status === '0000') {
