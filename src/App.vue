@@ -15,7 +15,8 @@ export default {
 body {
   height: 100vh;
   width: 100vw;
-  min-width: 1024px;
+  min-width: 1920px;
+  min-height: 937px;
 }
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;

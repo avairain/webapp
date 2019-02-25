@@ -107,7 +107,7 @@ export default {
   data () {
     return {
       infoList: [
-        {
+        /* {
           id: 0,
           uName: 'liuyihui',
           theme: 'pink',
@@ -147,7 +147,7 @@ export default {
           name: '周小龙',
           description: '这是508最丑的肥逼，没有之一',
           tips: ['肥', '丑']
-        }
+        } */
       ],
       title: '这是508',
       flag: 0,
@@ -320,7 +320,7 @@ export default {
     }
   }
   section.main-wrap {
-    width: calc(~'100vw - 4em');
+    width: calc(~'100% - 4em');
     margin: 0 auto;
     > div.content {
       width: 100%;
@@ -328,26 +328,26 @@ export default {
       flex-wrap: wrap;
       > div {
         flex-basis: 50%;
-        height: calc(~"(100vh - 95px) / 5 * 2");
+        height: calc(~"(937px - 95px) / 5 * 2");
         &.speacil {
-          height: calc(~"(100vh - 95px) / 5 * 1");
+          height: calc(~"(937px - 95px) / 5 * 1");
           flex: 1;
           position: relative;
           z-index: 1;
         }
         &:last-child {
-          height: calc(~"(100vh - 95px) / 5 * 1");
+          height: calc(~"(937px - 95px) / 5 * 1");
           flex-basis: 30%;
         }
         &.nomarl {
-          height: calc(~"(100vh - 95px) / 3 - 3em");
+          height: calc(~"(937px - 95px) / 3 - 3em");
         }
       }
       div.detail {
         div.tips {
           text-align: center;
           display: flex;
-          height: calc(~"(100vh - 95px) / 5 * 2 - 3em");
+          height: calc(~"(937px - 95px) / 5 * 2 - 3em");
           position: relative;
           z-index: 0;
           span {
@@ -356,21 +356,21 @@ export default {
             width: 100%;
             height: 100%;
             font-size: 50px;
-            line-height: calc(~"(100vh - 95px) / 5 * 2 - 3em");
+            line-height: calc(~"(937px - 95px) / 5 * 2 - 3em");
             font-weight: bolder;
             text-shadow: 2px 2px 2px #fff;
           }
           &.speacil {
             text-align: center;
             display: flex;
-            height: calc(~"(100vh - 95px) / 5 * 1 - 3em");
+            height: calc(~"(937px - 95px) / 5 * 1 - 3em");
             span {
               display: block;
               transform: rotateZ(-30deg);
               width: 100%;
               height: 100%;
               font-size: 25px;
-              line-height: calc(~"(100vh - 95px) / 5 * 1 - 3em");
+              line-height: calc(~"(937px - 95px) / 5 * 1 - 3em");
               font-weight: bolder;
             }
           }
