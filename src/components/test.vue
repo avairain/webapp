@@ -33,7 +33,7 @@
   <el-dialog
     title="添加"
     :visible.sync="dialogVisible"
-    :width="1920 * 0.3">
+    width="30%">
     <div>
       name:<el-input v-model="formData.name"></el-input><br>
       gender:<el-input v-model="formData.gender"></el-input><br>

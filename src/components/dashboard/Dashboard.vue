@@ -47,7 +47,7 @@
       title="提示"
       :visible.sync="showMask"
       custom-class="definedDialog"
-      width="30%">
+      :width="1920 * 0.3 + 'px'">
         <div>
           <div class="row">
             <div v-if="viewSpeacil">
