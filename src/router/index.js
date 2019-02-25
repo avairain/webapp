@@ -8,14 +8,29 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-let Hello = () => import('../components/HelloWorld.vue')
-let Test = () => import('../components/test.vue')
+// view
+const Main = () => import('../view/main/Main.vue')
+
+// component
+const Dashboard = () => import('@/components/dashboard/Dashboard.vue')
+const Hello = () => import('../components/HelloWorld.vue')
+const Test = () => import('../components/test.vue')
 
 export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/hello'
+      component: Main,
+      children: [
+        {
+          path: '',
+          redirect: 'dashboard'
+        },
+        {
+          path: 'dashboard',
+          component: Dashboard
+        }
+      ]
     },
     {
       path: '/hello',

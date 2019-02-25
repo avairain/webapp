@@ -13,6 +13,10 @@ let api_path_add = `${path}/add`
 let api_path_getList = `${path}/getList`
 let api_path_update = `${path}/update`
 let api_path_delete = `${path}/delete`
+let api_path_getInfoList = `${path}/get508InfoList`
+let api_path_add508Member = `${path}/add508Member`
+let api_path_delete50Member = `${path}/delete50Member`
+let api_path_update508Member = `${path}/update508Member`
 // let sp_mds = `${_DOMAIN}/${_APPS['sp_mds'].ver}/${_APPS['sp_mds'].model}`
 
 export function add (params) {
@@ -39,6 +43,34 @@ export function deleteInfo (params) {
 export function getList (params) {
   return _postData(
     api_path_getList,
+    params
+  )
+}
+
+export function getInfoList (params) {
+  return _postData(
+    api_path_getInfoList,
+    params
+  )
+}
+
+export function add508Member (params) {
+  return _postData(
+    api_path_add508Member,
+    params
+  )
+}
+
+export function delete50Member (params) {
+  return _postData(
+    api_path_delete50Member,
+    params
+  )
+}
+
+export function update508Member (params) {
+  return _postData(
+    api_path_update508Member,
     params
   )
 }

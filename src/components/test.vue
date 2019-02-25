@@ -48,7 +48,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import { getList, add, update, deleteInfo } from '../common/js/interface.js'
 
 export default {
@@ -106,11 +105,11 @@ export default {
       console.log(i, obj)
       // this.$confirm('待开发', '提示')
       deleteInfo(obj)
-      .then(data => {
-        this.dialogVisible = false
-        this.getInfo()
-        this.formData = {}
-      })
+        .then(data => {
+          this.dialogVisible = false
+          this.getInfo()
+          this.formData = {}
+        })
     }
   }
 }
