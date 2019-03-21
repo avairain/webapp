@@ -38,7 +38,7 @@ import router from './router'
 import ElementUI from 'element-ui'
 import axios from 'axios'
 
-axios.defaults.timeout = 10000
+axios.defaults.timeout = 20000
 axios.defaults.headers.common['Content-Type'] = 'application/json;charset=UTF-8'
 Vue.prototype.$Axios = axios
 

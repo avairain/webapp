@@ -17,6 +17,7 @@ let api_path_getInfoList = `${path}/get508InfoList`
 let api_path_add508Member = `${path}/add508Member`
 let api_path_delete50Member = `${path}/delete50Member`
 let api_path_update508Member = `${path}/update508Member`
+let api_path_ydyl = `${path}/ydyl`
 // let sp_mds = `${_DOMAIN}/${_APPS['sp_mds'].ver}/${_APPS['sp_mds'].model}`
 
 export function add (params) {
@@ -75,6 +76,14 @@ export function update508Member (params) {
   )
 }
 
+export function ydyl (params) {
+  return _postData(
+    api_path_ydyl,
+    params,
+    {responseType: 'arraybuffer'}
+  )
+}
+
 export function getCaptcha () {
   return _getData(
     api_path_getCaptcha
@@ -100,12 +109,12 @@ function _getData (_url, _data) {
   })
 }
 
-function _postData (_url, _data) {
+function _postData (_url, _data, _header) {
   // return axios.post(_url, qs.stringify(_data), {
   if (/findRtLocInfo/.test(_url) || /findVehDataMoniInfo/.test(_url) || /addVehInfoUI/.test(_url) || /addVehModelUI/.test(_url) || /findGroups/.test(_url)) {
   } else {
   }
-  return axios.post(_url, _data || {})
+  return axios.post(_url, _data || {}, _header)
     .then(res => {
       return Promise.resolve(res.data)
     }).catch(err => {

@@ -15,6 +15,7 @@ const Main = () => import('../view/main/Main.vue')
 const Dashboard = () => import('@/components/dashboard/Dashboard.vue')
 const Hello = () => import('../components/HelloWorld.vue')
 const Test = () => import('../components/test.vue')
+const Ydyl = () => import('../components/Ydyl')
 
 export default new Router({
   routes: [
@@ -24,7 +25,7 @@ export default new Router({
       children: [
         {
           path: '',
-          redirect: 'dashboard'
+          redirect: 'ydyl'
         },
         {
           path: 'dashboard',
@@ -39,6 +40,10 @@ export default new Router({
     {
       path: '/test',
       component: Test
+    },
+    {
+      path: '/ydyl',
+      component: Ydyl
     }
   ]
 })
